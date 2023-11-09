@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:43:32 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/20 12:17:45 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/09 18:03:09 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,17 +109,4 @@ char	*get_next_line(int fd)
 	cut_line(line);
 	swap_buffer(buffer);
 	return (line);
-}
-int	main()
-{
-	int fd;
-	char *line;
-
-	fd = open("test.txt", O_RDONLY);
-	while ((line = get_next_line(fd)))
-	{
-		printf("%s", line);
-		free(line);
-	}
-	return (0);
 }

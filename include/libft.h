@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 17:30:15 by vandre            #+#    #+#             */
-/*   Updated: 2023/10/20 02:13:52 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/09 18:14:20 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+void	len_convertbase(unsigned long nb, char index, size_t *len);
+size_t	len_putchar(char c);
+void	len_putnbr(int nb, size_t *len);
+size_t	len_putstr(char *str);
 
 #endif

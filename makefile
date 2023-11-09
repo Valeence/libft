@@ -6,7 +6,7 @@
 #    By: vandre <vandre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 13:54:22 by vandre            #+#    #+#              #
-#    Updated: 2023/10/19 14:59:15 by vandre           ###   ########.fr        #
+#    Updated: 2023/11/09 17:54:46 by vandre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean:
 					rm -rf $(OBJ_DIR)
 
 fclean:				clean
-						rm -f $(NAME)
+					rm -f $(NAME)
 
 re:					fclean all
 
