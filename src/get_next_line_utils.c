@@ -6,13 +6,13 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:43:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/20 12:19:32 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/12 20:45:44 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	len_s1;
@@ -20,19 +20,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s2)
 		return (NULL);
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	str = (char *)ft_calloc(sizeof(char), (len_s1 + len_s2 + 1));
+	len_s1 = ft_strlen_gnl(s1);
+	len_s2 = ft_strlen_gnl(s2);
+	str = (char *)ft_calloc_gnl(sizeof(char), (len_s1 + len_s2 + 1));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1, len_s1 + 1);
-	ft_strlcat(str + len_s1, s2, len_s2 + 1);
+	ft_strlcpy_gnl(str, s1, len_s1 + 1);
+	ft_strlcat_gnl(str + len_s1, s2, len_s2 + 1);
 	if (s1)
 		free((char *)s1);
 	return (str);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_gnl(const char *str)
 {
 	size_t	i;
 
@@ -44,7 +44,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
@@ -65,7 +65,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+size_t	ft_strlcat_gnl(char *dst, const char *src, size_t n)
 {
 	size_t	i;
 	size_t	k;
@@ -83,10 +83,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	}
 	if (i != n)
 		dst[i + k] = '\0';
-	return (i + ft_strlen(src));
+	return (i + ft_strlen_gnl(src));
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc_gnl(size_t count, size_t size)
 {
 	char	*ptr;
 	size_t	total;

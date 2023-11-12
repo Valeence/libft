@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:48:16 by vandre            #+#    #+#             */
-/*   Updated: 2023/10/19 14:34:40 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/12 14:56:08 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
-	if (!s1 || !s2)
+	if (!s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
@@ -27,6 +27,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(str, s1, len_s1 + 1);
 	ft_strlcat(str + len_s1, s2, len_s2 + 1);
+	if (s1)
+		free((char *)s1);
 	return (str);
 }
 /*

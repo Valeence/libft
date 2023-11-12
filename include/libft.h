@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 17:30:15 by vandre            #+#    #+#             */
-/*   Updated: 2023/11/09 18:14:20 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/12 15:37:39 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,21 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
+int		ft_printf(const char *str, ...);
 void	len_convertbase(unsigned long nb, char index, size_t *len);
 size_t	len_putchar(char c);
 void	len_putnbr(int nb, size_t *len);
 size_t	len_putstr(char *str);
+
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char const *s1, char const *s2);
+size_t	ft_strlen_gnl(const char *str);
+size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t size);
+size_t	ft_strlcat_gnl(char *dst, const char *src, size_t n);
+void	swap_buffer(char *buffer);
+void	cut_line(char *line);
+char	*init_line(char *line, char *buffer);
+int		in_line(char *str);
+void	*ft_calloc_gnl(size_t count, size_t size);
 
 #endif

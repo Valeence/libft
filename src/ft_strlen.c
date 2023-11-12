@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 20:33:07 by valence           #+#    #+#             */
-/*   Updated: 2023/10/19 14:34:57 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/12 20:45:31 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!str)
+		return (0);
+	while (str[i])
 		i++;
 	return (i);
 }

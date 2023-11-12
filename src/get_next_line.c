@@ -6,7 +6,7 @@
 /*   By: vandre <vandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:43:32 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/09 18:03:09 by vandre           ###   ########.fr       */
+/*   Updated: 2023/11/12 15:39:39 by vandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*init_line(char *line, char *buffer)
 	if (!buffer)
 		return (NULL);
 	if (!line)
-		line = (char *)malloc((ft_strlen(buffer) + 1) * sizeof(char));
+		line = (char *)malloc((ft_strlen_gnl(buffer) + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
 	while (buffer[i] != '\0')
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 		buffer[bytes_read] = '\0';
 		if (bytes_read == 0)
 			break ;
-		line = ft_strjoin(line, buffer);
+		line = ft_strjoin_gnl(line, buffer);
 		if (!line)
 			return (NULL);
 	}
